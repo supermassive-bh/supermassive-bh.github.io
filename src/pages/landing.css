@@ -1,0 +1,74 @@
+.background-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-image: url('https://scitechdaily.com/images/Milky-Way%E2%80%99s-Supermassive-Black-Hole-May-Have-Wandering-Siblings.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.body-section {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 10vw;
+  text-align: left;
+  top: 40vh;
+  background: rgba(128, 128, 128, 0.17);
+  padding: 20px 30px 30px 14px;
+}
+
+.main-title {
+  font-size: 3rem;
+  color: white;
+  margin: 10px 0;
+  border-bottom: 2px solid rgb(228, 61, 78);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.paragraph-text {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: rgb(128, 128, 128);
+  font-family: Poppins;
+}
+
+.watch-button {
+  background: transparent;
+  border: 3px solid white;
+  padding: 14px 24px;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 1s;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.watch-button:hover {
+  color: rgb(228, 61, 78);
+  border-color: rgb(228, 61, 78);
+}
+
+.video-frame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.75);
+}

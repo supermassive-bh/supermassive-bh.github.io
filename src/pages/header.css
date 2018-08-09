@@ -1,0 +1,22 @@
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  line-height: 4rem;
+  background: rgba(38, 35, 48, .8);
+  width: 100%;
+  padding: 18px 15px;
+  box-sizing: border-box;
+}
+
+.links-tab {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ue4-logo {
+  cursor: pointer;
+  background: url('/static/UE_Logo_Icon_White.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
