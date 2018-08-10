@@ -4,7 +4,7 @@
   line-height: 4rem;
   background: rgba(38, 35, 48, .8);
   width: 100%;
-  padding: 18px 15px;
+  padding: 15px 15px 5px 15px;
   box-sizing: border-box;
 }
 
@@ -13,10 +13,26 @@
   justify-content: space-between;
 }
 
+.retro-logo {
+  background: url('/static/Retro_Bomb_Logo.png');
+  background-size: cover;
+  width: 80px;
+  height: 60px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 2rem;
+}
+
 .ue4-logo {
   cursor: pointer;
   background: url('/static/UE_Logo_Icon_White.png');
   background-size: cover;
-  width: 50px;
-  height: 50px;
+  width: 51px;
+  height: 51px;
+}
+
+.header-lin {
+  margin-left: 10px;
 }
