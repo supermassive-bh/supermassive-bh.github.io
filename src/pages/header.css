@@ -6,6 +6,7 @@
   width: 100%;
   padding: 15px 15px 5px 15px;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .links-tab {
@@ -14,6 +15,7 @@
 }
 
 .retro-logo {
+  margin-right: 6px;
   background: url('/static/Retro_Bomb_Logo.png');
   background-size: cover;
   width: 80px;
@@ -33,6 +35,12 @@
   height: 51px;
 }
 
-.header-lin {
+.header-link {
   margin-left: 10px;
+  opacity: 0.75;
+  transition: opacity .5s;
+}
+
+.header-link:hover {
+  opacity: 1;
 }

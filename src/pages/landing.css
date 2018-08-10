@@ -30,6 +30,12 @@
   user-select: none;
 }
 
+@media screen and (max-width: 800px) {
+  .body-section {
+    top: 29vh;
+  }
+}
+
 .main-title {
   font-size: 3rem;
   color: white;

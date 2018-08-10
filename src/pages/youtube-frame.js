@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+const VIDEO_ID = "5R_dniXqMvU";
 
 class YoutubeFrame extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class YoutubeFrame extends React.Component {
 
     return (
       <YouTube
-        videoId="I7963HO70pA"
+        videoId={VIDEO_ID}
         opts={opts}
         onReady={this._onReady}
       />

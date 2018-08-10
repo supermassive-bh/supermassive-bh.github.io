@@ -11,10 +11,10 @@ class HeaderSection extends Component {
           <span className="logo-text">Retro Bomb</span>
         </div>
         <div className="links-tab">
-          <SocialIcon className="header-link" url="https://www.youtube.com/channel/UCHeLSUsUm_i036m2cBDz-vg" />
+          <SocialIcon className="header-link" url="https://www.youtube.com/channel/UCSIq3xO5VfiZ8aqsmfBeEYw" />
           <a target="_blank" rel="noopener noreferrer"
             href="https://www.unrealengine.com/"
-            className="ue4-logo header-lin">
+            className="ue4-logo header-link">
           </a>
         </div>
       </section>
