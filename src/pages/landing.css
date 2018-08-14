@@ -87,6 +87,7 @@
   position: absolute;
   width: 100%;
   bottom: 42vh;
+  z-index: 99;
 }
 
 .watch-button {
