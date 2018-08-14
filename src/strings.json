@@ -1,8 +1,4 @@
 {
-  "Supermassive black hole": {
-    "en": "Supermassive black hole",
-    "ru": "Supermassive black hole"
-  },
   "#About1": {
     "en": "Maintain a bar on your own asteroid is not a fairy tale! One day piles of space debris fall down from the sky, another day hordes of evil robots try to steal your honest earnings.",
     "ru": "Содержать бар на собственном астероиде - это далеко не сказка. То залетает кучи космического мусора, то орды злобных роботов пытаются украсть ваш честный заработок."
@@ -27,12 +23,16 @@
     "en": "Watch video",
     "ru": "Трейлер"
   },
+  "Watch gameplay": {
+    "en": "Watch gameplay",
+    "ru": "Геймплей"
+  },
   "AboutTeam": {
-    "en": "About team",
+    "en": "About Team",
     "ru": "О команде"
   },
   "#AboutTeam": {
-    "en": "",
+    "en": "#AboutTeam",
     "ru": "Привет! Мы небольшая команда, разрабатывающая игры в Санкт-Петербурге. Мы хотим чтобы игроки получали от наших игр столько же удовольствия, сколько мы получаем от их создания. Ну что, уже хочется поиграть?"
   }
 }

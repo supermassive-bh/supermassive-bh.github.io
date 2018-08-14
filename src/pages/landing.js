@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HeaderSection from './header';
+import Slider from './slider';
 import YoutubeFrame from './youtube-frame';
 import _T from '../locale';
 import './landing.css';
@@ -20,25 +21,15 @@ document.onkeydown = function(evt) {
 
 const locale = (navigator.language || navigator.userLanguage)
   .includes('ru') ? 'ru' : 'en';
-
-const textPargrh1 = _T('#About1', locale);
-const textPargrh2 = _T('#About2', locale);
-const textPargrh3 = _T('#About3', locale);
-const textPargrh4 = _T('#About4', locale);
-const textPargrh5 = _T('#About5', locale);
-
-const textWatch = _T('Watch video', locale);
-const titleText = _T('Supermassive black hole', locale);
-
-const titleText2 = _T('AboutTeam', locale);
-const textAboutTeam = _T('#AboutTeam', locale);
-
-
+const GameplayVideo = 'CPpAgsLGPMU';
+const TreilerVideo = 'CxQZveRr308';
 
 class Landing extends Component {
   state = {
     isVideoFrame: false,
-    scrolled: false
+    videoId: false,
+    scrolled: false,
+    locale: locale,
   };
 
   constructor(props) {
@@ -46,8 +37,15 @@ class Landing extends Component {
     escapeHandler = this.onFrameClick;
   }
 
+  changeLocale = (loc) => {
+    this.setState({locale: loc});
+  };
+
   onVideoClick = (e) => {
-    this.setState({isVideoFrame: true});
+    const videoId = e.target.id === 'gameplay' ? GameplayVideo : TreilerVideo;
+    this.setState({
+      isVideoFrame: true, videoId: videoId,
+    });
     e.stopPropagation();
   };
 
@@ -66,52 +64,73 @@ class Landing extends Component {
   };
 
   render() {
+    const locale = this.state.locale;
+    const textPargrh1 = _T('#About1', locale);
+    const textPargrh2 = _T('#About2', locale);
+    const textPargrh3 = _T('#About3', locale);
+    const textPargrh4 = _T('#About4', locale);
+    const textPargrh5 = _T('#About5', locale);
+    const textWatch = _T('Watch video', locale);
+    const textGameplay = _T('Watch gameplay', locale);
+    const titleAboutTeam = _T('AboutTeam', locale);
+    const textAboutTeam = _T('#AboutTeam', locale);
+
     return (
       <div>
-        <div className="background-image"></div>
+        <Slider timeout="3000" slideCount="4" />
         <div className="box">
-          <HeaderSection />
-          <section className={"slide-section" + (this.state.scrolled ? " scrolled" : "")} onClick={this.onScrollAutoClick}>
-            <div className="slider-container">
-              <div className="slider-wrapper">
-                <div className="body-section">
-                  <h2 className="main-title">{titleText}</h2>
-                  <p className="paragraph-text">{textPargrh1}</p>
-                  <p className="paragraph-text">{textPargrh2}</p>
-                  <p className="paragraph-text">{textPargrh3}</p>
-                  <p className="paragraph-text">{textPargrh4}</p>
-                  <p className="paragraph-text">{textPargrh5}</p>
-                  <button className="watch-button" onClick={this.onVideoClick}>{textWatch}</button>
-                </div>
+          <HeaderSection onClick={this.changeLocale} locale={locale}/>
+          <div className="background-image splash-logo"
+            onChange={this.onScrollAutoClick}></div>
+          <div className="content-container">
+            <div className="content-wrapper">
+              <div className="buttons-wrapper">
+                <button id="treiler" className="watch-button"
+                  onClick={this.onVideoClick}>{textWatch}</button>
+                <button id="gameplay" className="watch-button"
+                  onClick={this.onVideoClick}>{textGameplay}</button>
               </div>
-              <div className="slider-wrapper">
-                <div className="body-section">
-                  <h2 className="main-title">{titleText2}</h2>
-                  <p className="paragraph-text">{textAboutTeam}</p>
+              <section className={"slide-section" + (this.state.scrolled ? " scrolled" : "")} onClick={this.onScrollAutoClick}>
+                <div className="slider-container">
+                  <div className="slider-wrapper">
+                    <div className="body-section">
+                      <p className="paragraph-text">{textPargrh1}</p>
+                      <p className="paragraph-text">{textPargrh2}</p>
+                      <p className="paragraph-text">{textPargrh3}</p>
+                      <p className="paragraph-text">{textPargrh4}</p>
+                      <p className="paragraph-text decoration">{textPargrh5}</p>
+                    </div>
+                  </div>
+                  <div className="slider-wrapper">
+                    <div className="body-section">
+                      <p className="main-title">{titleAboutTeam}</p>
+                      <p className="paragraph-text">{textAboutTeam}</p>
+                    </div>
+                  </div>
                 </div>
+              </section>
+              <div className="bullets">
+                <input type="radio" name="slide-trigger" value="first" id="first"
+                  checked={!this.state.scrolled} onChange={this.onScrollClick} />
+                <label className="radio" htmlFor="first">
+                <span className="outer">
+                  <span className="inner"></span>
+                </span>
+                </label>
+                <input type="radio" name="slide-trigger" value="second" id="second"
+                  checked={this.state.scrolled} onChange={this.onScrollClick} />
+                <label className="radio" htmlFor="second">
+                <span className="outer">
+                  <span className="inner"></span>
+                </span>
+                </label>
               </div>
             </div>
-          </section>
-          <div className="bullets">
-            <input type="radio" name="slide-trigger" value="first" id="first"
-              checked={!this.state.scrolled} onChange={this.onScrollClick} />
-            <label className="radio" htmlFor="first">
-            <span className="outer">
-              <span className="inner"></span>
-            </span>
-            </label>
-            <input type="radio" name="slide-trigger" value="second" id="second"
-              checked={this.state.scrolled} onChange={this.onScrollClick} />
-            <label className="radio" htmlFor="second">
-            <span className="outer">
-              <span className="inner"></span>
-            </span>
-            </label>
           </div>
         </div>
         {this.state.isVideoFrame &&
           <div className="video-frame" onClick={this.onFrameClick}>
-            <YoutubeFrame /></div>}
+            <YoutubeFrame videoId={this.state.videoId}/></div>}
       </div>
     );
   }

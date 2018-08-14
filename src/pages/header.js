@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import { SocialIcon } from 'react-social-icons';
 import './header.css';
 
 class HeaderSection extends Component {
+  selectLocale = (e) => {
+    e.preventDefault();
+    if (!this.props.onClick) {
+      return;
+    }
+    this.props.onClick(e.target.id);
+  };
+
   render() {
+    const isEn = this.props.locale === 'en';
     return (
-      <section className="header-top">
-        <div className="links-tab">
-          <div className="retro-logo"></div>
-          <span className="logo-text">Retro Bomb</span>
-        </div>
-        <div className="links-tab">
-          <SocialIcon className="header-link" url="https://www.youtube.com/channel/UCSIq3xO5VfiZ8aqsmfBeEYw" />
-          <a target="_blank" rel="noopener noreferrer"
-            href="https://www.unrealengine.com/"
-            className="ue4-logo header-link">
-          </a>
+      <section className="content-container header-top-container">
+        <div className="content-wrapper header-top">
+          <div className="links-tab links-tab-col">
+            <div className="retro-logo"></div>
+          </div>
+          <div className="links-tab">
+            <a href="#en" id="en" className={isEn ? "selected-link" : ""}
+              onClick={this.selectLocale}>EN</a>/
+            <a href="#ru" id="ru" className={!isEn ? "selected-link" : ""}
+              onClick={this.selectLocale}>RU</a>
+          </div>
         </div>
       </section>
     );
