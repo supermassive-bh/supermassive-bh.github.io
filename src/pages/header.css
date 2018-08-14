@@ -37,7 +37,7 @@
 }
 
 .retro-logo {
-  margin-right: 6px;
+  margin-bottom: 5px;
   background: url('/static/web_retrobomblogo.png');
   background-size: cover;
   max-width: 260px;
