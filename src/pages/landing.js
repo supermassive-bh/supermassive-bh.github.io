@@ -109,23 +109,23 @@ class Landing extends Component {
                   </div>
                 </div>
               </section>
-              <div className="bullets">
-                <input type="radio" name="slide-trigger" value="first" id="first"
-                  checked={!this.state.scrolled} onChange={this.onScrollClick} />
-                <label className="radio" htmlFor="first">
-                <span className="outer">
-                  <span className="inner"></span>
-                </span>
-                </label>
-                <input type="radio" name="slide-trigger" value="second" id="second"
-                  checked={this.state.scrolled} onChange={this.onScrollClick} />
-                <label className="radio" htmlFor="second">
-                <span className="outer">
-                  <span className="inner"></span>
-                </span>
-                </label>
-              </div>
             </div>
+          </div>
+          <div className="bullets">
+            <input type="radio" name="slide-trigger" value="first" id="first"
+              checked={!this.state.scrolled} onChange={this.onScrollClick} />
+            <label className="radio" htmlFor="first">
+            <span className="outer">
+              <span className="inner"></span>
+            </span>
+            </label>
+            <input type="radio" name="slide-trigger" value="second" id="second"
+              checked={this.state.scrolled} onChange={this.onScrollClick} />
+            <label className="radio" htmlFor="second">
+            <span className="outer">
+              <span className="inner"></span>
+            </span>
+            </label>
           </div>
         </div>
         {this.state.isVideoFrame &&

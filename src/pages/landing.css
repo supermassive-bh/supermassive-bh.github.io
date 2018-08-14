@@ -119,10 +119,11 @@
   justify-content: center;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.75);
+  z-index: 99;
 }
 
 .slide-section {
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 84px);
 }
 
@@ -157,8 +158,8 @@
 
 .slider-container {
   overflow: hidden;
-  height: calc(100vh - 84px);
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .bullets {

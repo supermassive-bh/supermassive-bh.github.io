@@ -15,9 +15,11 @@ body {
 .content-container {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .content-wrapper {
   max-width: 1366px;
-  width: 100vw
+  width: 100vw;
+  position: relative;
 }
